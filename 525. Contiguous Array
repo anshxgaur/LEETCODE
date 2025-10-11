@@ -1,0 +1,22 @@
+class Solution(object):
+    def findMaxLength(self, nums):
+
+        # Map to store first occurrence of a cumulative sum
+        prefix_index = {0: -1}  
+        max_len = 0
+        cum_sum = 0
+
+        for i, num in enumerate(nums):
+            # Treat 0 as -1, so equal 0s and 1s means sum = 0
+            if num == 0:
+                cum_sum -= 1
+            else:
+                cum_sum += 1
+
+            # If this cumulative sum was seen before, subarray between them has equal 0s and 1s
+            if cum_sum in prefix_index:
+                max_len = max(max_len, i - prefix_index[cum_sum])
+            else:
+                prefix_index[cum_sum] = i
+
+        return max_len
