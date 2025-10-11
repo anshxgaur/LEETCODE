@@ -1,0 +1,24 @@
+class Solution(object):
+    def subarraysDivByK(self, nums, k):
+        from collections import defaultdict
+        
+        count = 0
+        prefix_sum = 0
+        remainder_freq = defaultdict(int)
+        remainder_freq[0] = 1   # base case: empty prefix divisible by k
+
+        for num in nums:
+            prefix_sum += num
+            remainder = prefix_sum % k
+
+            # normalize negative remainders
+            if remainder < 0:
+                remainder += k
+
+            # add the number of times this remainder has been seen
+            count += remainder_freq[remainder]
+
+            # update frequency
+            remainder_freq[remainder] += 1
+
+        return count
