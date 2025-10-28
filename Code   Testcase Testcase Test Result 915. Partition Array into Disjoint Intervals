@@ -1,0 +1,14 @@
+class Solution(object):
+    def partitionDisjoint(self, nums):
+        max_left = nums[0]
+        current_max = nums[0]
+        partition_idx = 0
+
+        for i in range(1, len(nums)):
+            current_max = max(current_max, nums[i])
+            if nums[i] < max_left:
+                # We must extend the left partition
+                max_left = current_max
+                partition_idx = i
+
+        return partition_idx + 1
