@@ -10,5 +10,5 @@ class Solution(object):
                 # We must extend the left partition
                 max_left = current_max
                 partition_idx = i
-
+#---
         return partition_idx + 1
