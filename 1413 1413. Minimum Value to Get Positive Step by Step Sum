@@ -1,3 +1,5 @@
+
+# prefix sum 
 class Solution(object):
     def minStartValue(self, nums):
         total = 0
