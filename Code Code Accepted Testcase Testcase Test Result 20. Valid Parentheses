@@ -14,3 +14,4 @@ class Solution:
                 return False  # invalid character
         
         return not stack  # stack should be empty if valid
+# stack property
