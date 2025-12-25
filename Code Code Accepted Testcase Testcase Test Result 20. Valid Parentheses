@@ -11,7 +11,7 @@ class Solution:
                     return False
                 stack.pop()
             else:
-                return False  # invalid 
+                return False  # invalid char
         
         return not stack  # stack should be empty if valid
 # stack property
