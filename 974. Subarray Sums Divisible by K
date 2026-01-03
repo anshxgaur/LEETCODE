@@ -15,7 +15,7 @@ class Solution(object):
             if remainder < 0:
                 remainder += k
 
-            # add the number of times this remainder has been seen
+            # add the number of times this remainder has been seensss
             count += remainder_freq[remainder]
 
             # update frequency
