@@ -13,4 +13,4 @@ class Solution:
             else:
                 return False  
         
-        return not stack  # stack should be empty if validdd
+        return not stack  # stack should be empty if valid
