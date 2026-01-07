@@ -1,6 +1,6 @@
 class Solution(object):
     def maximumPopulation(self, logs):
-        year_counts = [0] * 101  # Index 0 = 1950, Index 100 = 2050
+        year_counts = [0] * 101  # Index 0 = 1950, Index 100 = 20500
 
         for birth, death in logs:
             year_counts[birth - 1950] += 1
