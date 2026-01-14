@@ -11,7 +11,7 @@ class Solution(object):
             prefix_sum += num
             remainder = prefix_sum % k
 
-            # normalize negative remainders--
+            # normalize negative remainders-
             if remainder < 0:
                 remainder += k
 
