@@ -1,0 +1,22 @@
+from typing import List
+
+class Solution:
+    def maximizeSquareHoleArea(self, n: int, m: int, hBars: List[int], vBars: List[int]) -> int:
+        def max_gap(bars: List[int]) -> int:
+            # Sort the removable bars
+            bars.sort()
+            longest = 1
+            cur = 1
+            for i in range(1, len(bars)):
+                if bars[i] == bars[i-1] + 1:
+                    cur += 1
+                    longest = max(longest, cur)
+                else:
+                    cur = 1
+            
+            return longest + 1
+        
+        h_gap = max_gap(hBars)
+        v_gap = max_gap(vBars)
+        side = min(h_gap, v_gap)
+        return side * side
