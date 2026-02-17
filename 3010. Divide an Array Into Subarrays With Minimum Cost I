@@ -1,0 +1,11 @@
+from typing import List
+
+class Solution:
+    def minimumCost(self, nums: List[int]) -> int:
+        # First subarray always starts at index 0
+        first_cost = nums[0]
+        
+        # Choose two smallest elements from the remaining array
+        rest = sorted(nums[1:])
+        
+        return first_cost + rest[0] + rest[1]
