@@ -12,7 +12,6 @@ class Solution(object):
         
         for i, word in enumerate(words):
             if word == target:
-                # Calculate circular distance
                 dist = min(abs(i - startIndex), n - abs(i - startIndex))
                 min_distance = min(min_distance, dist)
         
