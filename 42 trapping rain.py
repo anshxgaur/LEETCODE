@@ -1,1 +1,2 @@
-
+def trapled :
+if value 
